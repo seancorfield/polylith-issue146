@@ -1,11 +1,14 @@
 {:aliases  {:dev {:extra-paths ["development/src"]
-                  :extra-deps {org.clojure/clojure {:mvn/version "1.10.3"}
-                               org.clojure/tools.deps.alpha {:mvn/version "0.12.1003"}}}
-
+                  :extra-deps {org.clojure/clojure {:mvn/version "1.10.3"}}}
+            :+default {:extra-deps {poly/example-one {:local/root "components/example-one"}}
+                       :extra-paths ["components/example-one/test"]}
+            :+other {:extra-deps {poly/example-two {:local/root "components/example-two"}}
+                     :extra-paths ["components/example-two/test"]}
             :test {:extra-paths []}
 
             :poly {:main-opts ["-m" "polylith.clj.core.poly-cli.core"]
                    :extra-deps {polyfy/polylith
                                 {:git/url   "https://github.com/polyfy/polylith"
-                                 :sha       "8cd415f0da54e28f117c74848c32f91d23c805d4"
+                                 ;;issue-146 branch tip:
+                                 :sha       "4e58397150385cb753941b69dd6e959305ce8bad"
                                  :deps/root "projects/poly"}}}}}
