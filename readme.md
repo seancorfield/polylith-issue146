@@ -1,6 +1,6 @@
-<h1>Issue #146 Bug</h1>
+# Issue #146 Bug
 
-<p>You can start a REPL with the default profile, require the fixtures namespace and run the pre-test function (this one depends on Cheshire by way of example):</p>
+You can start a REPL with the default profile, require the fixtures namespace and run the pre-test function (this one depends on Cheshire by way of example):
 
 ```clojure
 (! 520)-> clj -A:dev:test:+default
@@ -13,7 +13,7 @@ nil
 user=> ^D
 ```
 
-<p>Similarly, you can start a REPL with the default profile, require the fixtures namespace and run the pre-test function (this has no dependencies):</p>
+Similarly, you can start a REPL with the default profile, require the fixtures namespace and run the pre-test function (this has no dependencies):
 
 ```clojure
 (! 521)-> clj -A:dev:test:+other
@@ -26,14 +26,14 @@ nil
 user=>
 ```
 
-<p>`check` thinks it is valid:</p>
+`check` thinks it is valid:
 
 ```clojure
 (! 522)-> clojure -M:poly check
 OK
 ```
 
-<p>If you run the tests for the `other` profile, it all works:</p>
+If you run the tests for the `other` profile, it all works:
 
 ```clojure
 (! 523)-> clojure -M:poly test :all :dev +other
@@ -58,7 +58,7 @@ Test results: 0 passes, 0 failures, 0 errors.
 Execution time: 1 seconds
 ```
 
-<p>However, if you run the tests for the `default` profile, it fails because the Cheshire dependency does not get onto the classpath:</p>
+However, if you run the tests for the `default` profile, it fails because the Cheshire dependency does not get onto the classpath:
 
 ```clojure
 (! 524)-> clojure -M:poly test :all :dev +default
